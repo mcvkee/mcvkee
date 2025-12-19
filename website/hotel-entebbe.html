@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWENKOBWA GARDENS </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hotel"></i>
+                <span>Rwenkobwa Gardens</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">All Branches</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://wa.me/+256782884567" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://twitter.com/@mcvkee18" target="_blank" class="twitter-btn">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com/@mcvkee18" target="_blank" class="tiktok-btn">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero rwenkobwa-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Rwenkobwa Gardens</h1>
+            <p class="hero-subtitle">Tranquil Garden Retreat in Ibanda</p>
+            <a href="#booking" class="cta-button">Book Your Stay</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Discover what makes us special</p>
+
+            <div class="services-grid">
+                <div class="service-card accommodation-card" onclick="openServiceModal('accommodation')">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Luxury Accommodation</h3>
+                    <p>Spacious rooms with modern amenities, comfortable beds, and stunning views. Each room is designed
+                        for your ultimate comfort.</p>
+                    <button class="view-details-btn">View Rooms & Prices</button>
+                </div>
+
+                <div class="service-card dining-card-rwenkobwa" onclick="openServiceModal('dining')">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Fine Dining</h3>
+                    <p>Experience world-class cuisine at our restaurant. From local delicacies to international dishes.
+                    </p>
+                    <button class="view-details-btn">View Menu & Prices</button>
+                </div>
+
+                <div class="service-card wifi-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Free WiFi</h3>
+                    <p>High-speed internet access throughout the hotel. Stay connected with loved ones and work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-subtitle">Explore Rwenkobwa Gardens</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openGalleryModal(0)">
+                    <img src="rwenkobwa-exterior.jpg" alt="Hotel Exterior at Night">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryModal(1)">
+                    <img src="rwenkobwa-entrance.jpg" alt="Hotel Entrance">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryModal(2)">
+                    <img src="rwenkobwa-conference.jpg" alt="Conference Hall">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryModal(3)">
+                    <img src="rwenkobwa-hallway.jpg" alt="Hotel Hallway">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <span class="gallery-close" onclick="closeGalleryModal()">&times;</span>
+        <img class="gallery-modal-content" id="galleryModalImg">
+        <div class="gallery-caption" id="galleryCaption"></div>
+        <button class="gallery-prev" onclick="changeGalleryImage(-1)">&#10094;</button>
+        <button class="gallery-next" onclick="changeGalleryImage(1)">&#10095;</button>
+    </div>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Make a Reservation</h2>
+            <p class="section-subtitle">Book your perfect stay with us</p>
+
+            <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name </label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number </label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests </label>
+                        <input type="number" id="guests" name="guests" min="1" max="10" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date </label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date </label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomType">Room Type </label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Executive Suite</option>
+                        <option value="presidential">Presidential Suite</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Booking</button>
+            </form>
+
+            <div id="bookingMessage" class="booking-message"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Rwenkobwa Town Council</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+256782884567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>vkeelevin18@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://wa.me/+256782884567" target="_blank" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://twitter.com/@mcvkee18" target="_blank" class="social-link twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.tiktok.com/@mcvkee18" target="_blank" class="social-link tiktok">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 sma Hotels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Service Details Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h2 id="serviceModalTitle">Service Details</h2>
+                <button class="close-modal" onclick="closeServiceModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="serviceModalBody">
+            </div>
+        </div>
+    </div>
+
+    <script src="hotel-script.js"></script>
+    <script src="service-modals.js"></script>
+</body>
+
+</html>
